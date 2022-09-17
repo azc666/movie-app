@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('genres', function (Blueprint $table) {
+        Schema::create('cast_movie', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('tmdb_id')->unique();
-            $table->string('title')->unique();
-            $table->string('slug');
-            $table->timestamps();
+            $table->foreignId('cast_id')->constrained();
+            $table->foreignId('movie_id')->constrained();
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('genres');
+        Schema::dropIfExists('cast_movie');
     }
 };
