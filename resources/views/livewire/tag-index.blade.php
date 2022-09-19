@@ -34,7 +34,7 @@
         </div>
     </div>
     <x-jet-dialog-modal wire:model="showTagModal">
-        <x-slot name="title">Create Tag</x-slot>
+        <x-slot name="title" class="font-bold text-indigo-600">Create Tag</x-slot>
 
         <x-slot name="content">
             <form class="space-y-6">
