@@ -35,9 +35,31 @@
     </div>
     <x-jet-dialog-modal wire:model="showTagModal">
         <x-slot name="title">Create Tag</x-slot>
-        <x-slot name="content">Content</x-slot>
+
+        <x-slot name="content">
+            <form class="space-y-6">
+                <div class="bg-gray-100 px-4 py-5 shadow sm:rounded-lg sm:p-6">
+                    <div class="mt-5 md:col-span-2 md:mt-0">
+                        <div class="grid grid-cols-6 gap-6">
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="tag-name" class="block text-sm font-medium text-gray-700">Tag
+                                    name</label>
+                                <input wire:model="tagName" type="text" autocomplete="tag-name"
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                    placeholder="tag-name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </x-slot>
         <x-slot name="footer">
-            <x-jet-button wire:click="closeTagModal">Cancel</x-jet-button>
+            <button wire:click="closeTagModal"
+                class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-red-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Cancel</button>
+            <button wire:click="createTag"
+                class="ml-3 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Create</button>
 
         </x-slot>
     </x-jet-dialog-modal>
