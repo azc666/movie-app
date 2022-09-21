@@ -31,6 +31,7 @@ class TagIndex extends Component
             'slug' => Str::slug($this->tagName)
         ]);
         $this->reset();
+        $this->tags = Tag::all();
     }
 
     public function showEditModal($tagId)
