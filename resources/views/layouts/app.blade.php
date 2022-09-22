@@ -20,6 +20,7 @@
 
 <body class="font-sans antialiased">
     <x-jet-banner />
+
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200 font-roboto">
         {{-- <div class="min-h-screen bg-gray-100"> --}}
             {{-- @livewire('navigation-menu') --}}
